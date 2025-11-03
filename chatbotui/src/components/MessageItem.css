@@ -1,0 +1,122 @@
+.msg {
+  display: flex;
+  margin: 12px 0;
+  animation: messageSlide 0.3s ease-out;
+}
+
+@keyframes messageSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.msg .msg-content {
+  padding: 14px 18px;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.msg.user { 
+  justify-content: flex-end; 
+}
+
+.msg.user .msg-content { 
+  /* background: linear-gradient(135deg, #667eea, #764ba2); */
+  background: #f47b20;
+  color: white;
+  border-bottom-right-radius: 8px;
+}
+
+.msg.bot { 
+  justify-content: flex-start; 
+}
+
+.msg.bot .msg-content { 
+  background: white;
+  color: #334155;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  border-bottom-left-radius: 8px;
+}
+
+/* Enhanced styling for markdown content in bot messages */
+.msg.bot .msg-content h1,
+.msg.bot .msg-content h2,
+.msg.bot .msg-content h3,
+.msg.bot .msg-content h4,
+.msg.bot .msg-content h5,
+.msg.bot .msg-content h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.msg.bot .msg-content h1:first-child,
+.msg.bot .msg-content h2:first-child,
+.msg.bot .msg-content h3:first-child {
+  margin-top: 0;
+}
+
+.msg.bot .msg-content p:last-child {
+  margin-bottom: 0;
+}
+
+.msg.bot .msg-content ul,
+.msg.bot .msg-content ol {
+  margin-left: 0;
+  padding-left: 1.5em;
+}
+
+.msg.bot .msg-content li {
+  margin-bottom: 0.2em;
+}
+
+.msg.bot .msg-content pre {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+}
+
+.msg.bot .msg-content code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.msg.bot .msg-content blockquote {
+  border-radius: 4px;
+  padding: 0.8em 1em;
+}
+
+.msg.bot .msg-content a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure proper spacing between markdown elements */
+.msg.bot .msg-content > *:first-child {
+  margin-top: 0;
+}
+
+.msg.bot .msg-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.msg.bot .msg-content h4{
+  color: #f47b20 !important; /* change to the colour you want */
+}
+.msg.bot .msg-content h3{
+  color: #613412 !important; /* change to the colour you want */
+}
+.msg.bot .msg-content .a{
+  color: #f47b20; /* change to the colour you want */
+}
+.msg.bot .msg-content a {
+  color: #f47b20 !important;           /* normal link color */
+  text-decoration: underline;
+}
