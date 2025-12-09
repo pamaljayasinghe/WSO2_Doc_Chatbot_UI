@@ -1,7 +1,19 @@
 .msg {
   display: flex;
-  margin: 12px 0;
-  animation: messageSlide 0.3s ease-out;
+  align-items: flex-end;
+  margin-bottom: 12px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes messageSlide {
@@ -18,7 +30,7 @@
 .msg .msg-content {
   padding: 14px 18px;
   border-radius: 20px;
-  max-width: 75%;
+  max-width: 100%;
   font-size: 15px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -117,6 +129,118 @@
   color: #f47b20; /* change to the colour you want */
 }
 .msg.bot .msg-content a {
-  color: #f47b20 !important;           /* normal link color */
-  text-decoration: underline;
+  color: #2844de !important;           
+  text-decoration: underline !important;
+}
+.msg.bot .msg-content a:visited {
+  color: #7a8cff !important; 
+}
+
+.feedback-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.feedback-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d; /* Default icon color */
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.feedback-btn:hover {
+  color: #343a40; /* Darker color on hover */
+  transform: scale(1.1);
+}
+
+.feedback-btn.selected {
+  color: #f47b20; /* Orange color when selected */
+}
+
+.feedback-btn svg {
+  font-size: 18px; /* Adjust icon size */
+}
+/* Feedback comment box styles */
+.feedback-comment-box {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feedback-comment-title {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.feedback-comment-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 60px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.feedback-comment-input:focus {
+  outline: none;
+  border-color: #f47b20;
+  box-shadow: 0 0 0 2px rgba(244, 123, 32, 0.1);
+}
+
+.feedback-comment-input::placeholder {
+  color: #adb5bd;
+}
+
+.feedback-submit-btn {
+  margin-top: 8px;
+  padding: 6px 16px;
+  background: #f47b20;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.feedback-submit-btn:hover:not(:disabled) {
+  background: #d66a1a;
+}
+
+.feedback-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedback-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
